@@ -1,0 +1,17 @@
+version: 0.2 
+ 
+phases: 
+    install: 
+        commands: 
+            - echo "Begin"
+    build: 
+        commands: 
+            - echo "S3 Upload Beginning" 
+            - aws s3 sync --delete . "s3://htest-git-s3.com"
+            - echo "S3 Upload Complete" 
+ 
+    post_build: 
+        commands: 
+            - echo "Build complete" 
+ 
+ 
