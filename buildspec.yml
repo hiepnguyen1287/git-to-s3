@@ -4,6 +4,8 @@ phases:
     install: 
         commands: 
             - echo "Begin"
+            - apt-get update
+            - apt-get install awscli -y
     build: 
         commands: 
             - echo "S3 Upload Beginning" 
